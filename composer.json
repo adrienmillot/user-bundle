@@ -1,0 +1,26 @@
+{
+    "name": "amillot/user-bundle",
+    "description": "Bundle that manage user.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrien MILLOT",
+            "email": "adrien.millot@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "amillot\\UserBundle\\": ""
+        }
+    },
+    "autoload-dev": {},
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    }
+}
