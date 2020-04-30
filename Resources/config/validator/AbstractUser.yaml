@@ -1,0 +1,6 @@
+App\Entity\AbstractUser:
+    properties:
+        password:
+            - NotNull: ~
+        username:
+            - NotNull: ~
