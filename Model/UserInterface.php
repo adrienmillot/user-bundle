@@ -7,11 +7,23 @@ use Symfony\Component\Security\Core\User\UserInterface as SecurityUserInterface;
 interface UserInterface extends SecurityUserInterface
 {
     /**
+     * @return ProfileInterface|null
+     */
+    public function getProfile(): ?ProfileInterface;
+
+    /**
      * @param string $prmPassword
      *
      * @return UserInterface
      */
     public function setPassword(string $prmPassword): UserInterface;
+
+    /**
+     * @param ProfileInterface|null $prmProfile
+     *
+     * @return UserInterface
+     */
+    public function setProfile(?ProfileInterface $prmProfile): UserInterface;
 
     /**
      * @param array $prmRoles
