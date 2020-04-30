@@ -1,0 +1,21 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="amillot\UserBundle\Entity\AbstractUser" repository-class="amillot\UserBundle\Repository\UserRepository">
+        <id name="id" type="string" column="id">
+            <generator strategy="UUID"/>
+        </id>
+
+        <field name="password" column="password" type="string" />
+        <field name="roles" column="roles" type="json_array"  />
+        <field name="salt" column="salt" type="string"  />
+        <field name="username" column="username" type="string"  />
+
+        <one-to-one field="profile" target-entity="amillot\UserBundle\Entity\Profile" mapped-by="user">
+            <join-column referenced-column-name="id" />
+        </one-to-one>
+    </mapped-superclass>
+
+</doctrine-mapping>
