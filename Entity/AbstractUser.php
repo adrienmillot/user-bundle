@@ -2,6 +2,7 @@
 
 namespace amillot\UserBundle\Entity;
 
+use amillot\UserBundle\Model\ProfileInterface;
 use amillot\UserBundle\Model\UserInterface;
 
 abstract class AbstractUser implements UserInterface
@@ -9,6 +10,8 @@ abstract class AbstractUser implements UserInterface
     protected $id;
 
     protected $password;
+
+    protected $profile;
 
     protected $roles = [];
 
@@ -19,11 +22,15 @@ abstract class AbstractUser implements UserInterface
     public function __construct()
     {
         $this->id = uniqid('user', true);
-        $this->salt = base_convert(hash('sha512', uniqid(mt_rand(), true)), 16, 36);
+        $this->salt = base_convert(hash('sha512', uniqid((string)mt_rand(), true)), 16, 36);
     }
 
     public function __toString()
     {
+        if (null !== $this->getProfile()) {
+            return sprintf('%s', $this->getProfile());
+        }
+
         return sprintf('%s', $this->getUsername());
     }
 
@@ -49,6 +56,14 @@ abstract class AbstractUser implements UserInterface
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProfile(): ?ProfileInterface
+    {
+        return $this->profile;
     }
 
     /**
@@ -85,6 +100,16 @@ abstract class AbstractUser implements UserInterface
     public function setPassword(string $prmPassword): UserInterface
     {
         $this->password = $prmPassword;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setProfile(?ProfileInterface $prmProfile): UserInterface
+    {
+        $this->profile = $prmProfile;
 
         return $this;
     }

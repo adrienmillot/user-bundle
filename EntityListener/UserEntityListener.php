@@ -2,6 +2,7 @@
 
 namespace amillot\UserBundle\EntityListener;
 
+use amillot\UserBundle\Model\ProfileInterface;
 use amillot\UserBundle\Model\UserInterface;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -24,7 +25,12 @@ class UserEntityListener
         }
 
         $password = $this->userPasswordEncoder->encodePassword($entity, $entity->getPassword());
+        $profile = $entity->getProfile();
 
         $entity->setPassword($password);
+
+        if ($profile instanceof ProfileInterface) {
+            $profile->setUser($entity);
+        }
     }
 }
