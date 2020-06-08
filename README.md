@@ -19,6 +19,27 @@ class User extends AbstractUser
 
 ```
 
+# Create your Profile class
+
+To use this bundle, you have to create your own Profile class which extends to AbstractProfile class.
+
+```php
+// src\Entity\Profile.php
+
+<?php
+
+declare(strict_types=1);
+
+namespace App\Entity;
+
+use amillot\UserBundle\Entity\AbstractProfile;
+
+class Profile extends AbstractProfile
+{
+}
+
+```
+
 # Encoding Passwords
 
 You can control how your user password is encoded in security.yaml.
