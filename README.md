@@ -1,0 +1,121 @@
+# Create your User class
+
+To use this bundle, you have to create your own User class which extends to AbstractUser class.
+
+```php
+// src\Entity\User.php
+
+<?php
+
+declare(strict_types=1);
+
+namespace App\Entity;
+
+use amillot\UserBundle\Entity\AbstractUser;
+
+class User extends AbstractUser
+{
+}
+
+```
+
+# Create your Profile class
+
+To use this bundle, you have to create your own Profile class which extends to AbstractProfile class.
+
+```php
+// src\Entity\Profile.php
+
+<?php
+
+declare(strict_types=1);
+
+namespace App\Entity;
+
+use amillot\UserBundle\Entity\AbstractProfile;
+
+class Profile extends AbstractProfile
+{
+}
+
+```
+
+# Encoding Passwords
+
+You can control how your user password is encoded in security.yaml.
+
+```yaml
+// config/packages/security.yaml
+security:
+    encoders:
+        App\Entity\User: bcrypt
+
+```
+
+# Authentication & firewalls
+
+A firewall is the process which allow to authenticate your system.
+
+Only one firewall is used by request. You can use [pattern, host or service](https://symfony.com/doc/current/security/firewall_restriction.html) to identify the firewall to use.
+
+All real URLs are handled by the main firewall (no pattern key means it matches all URLs). A firewall can have many modes of authentication, in other words many ways to ask the question "Who are you?". Often, the user is unknown (i.e. not logged in) when they first visit your website. The anonymous mode, if enabled, is used for these requests.
+
+```yaml
+// config/packages/security.yaml
+security:
+    // ...
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            provider: users
+            anonymous: lazy
+            form_login:
+                login_path: home
+                check_path: login
+                use_referer: true
+                default_target_path: dashboard
+            logout:
+                path: logout
+
+    // ...
+```
+
+# Denying access, Roles, and other Authorization
+
+```yaml
+// config/packages/security.yaml
+security:
+    // ...
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/register', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/', roles: ROLE_USER }
+
+```
+
+# Link Profile entity to User entity
+
+You have to specify the User class to use instead of UserInterface.
+
+```yaml
+// config/packages/doctrine.yaml
+doctrine:
+
+    // ...
+
+    orm:
+
+        // ...
+
+        resolve_target_entities:
+            amillot\UserBundle\Model\ProfileInterface: App\Entity\Profile
+            amillot\UserBundle\Model\UserInterface: App\Entity\User
+```
