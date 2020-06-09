@@ -20,6 +20,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('class')
                     ->defaultValue('App\Entity\User')
                 ->end()
+                ->scalarNode('profile_class')
+                    ->defaultValue('App\Entity\Profile')
+                ->end()
             ->end()
         ;
 
