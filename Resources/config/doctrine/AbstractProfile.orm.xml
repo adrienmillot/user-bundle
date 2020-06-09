@@ -1,0 +1,20 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="amillot\UserBundle\Entity\AbstractProfile" repository-class="amillot\UserBundle\Repository\ProfileRepository">
+        <id name="id" type="string" column="id">
+            <generator strategy="UUID"/>
+        </id>
+
+        <field name="bornAt" column="born_at" type="datetime" nullable="true" />
+        <field name="firstName" column="first_name" type="string"  />
+        <field name="lastName" column="last_name" type="string"  />
+
+        <one-to-one field="user" target-entity="amillot\UserBundle\Model\UserInterface" inversed-by="profile">
+            <join-column name="user_id" referenced-column-name="id" on-delete="CASCADE" />
+        </one-to-one>
+    </mapped-superclass>
+
+</doctrine-mapping>
