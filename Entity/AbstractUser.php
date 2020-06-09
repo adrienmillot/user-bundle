@@ -11,6 +11,8 @@ abstract class AbstractUser implements UserInterface
 
     protected $password;
 
+    protected $profile;
+
     protected $roles = [];
 
     protected $salt;
@@ -25,6 +27,10 @@ abstract class AbstractUser implements UserInterface
 
     public function __toString()
     {
+        if (null !== $this->getProfile()) {
+            return sprintf('%s', $this->getProfile());
+        }
+
         return sprintf('%s', $this->getUsername());
     }
 
@@ -50,6 +56,14 @@ abstract class AbstractUser implements UserInterface
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProfile(): ?ProfileInterface
+    {
+        return $this->profile;
     }
 
     /**
@@ -86,6 +100,16 @@ abstract class AbstractUser implements UserInterface
     public function setPassword(string $prmPassword): UserInterface
     {
         $this->password = $prmPassword;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setProfile(?ProfileInterface $prmProfile): UserInterface
+    {
+        $this->profile = $prmProfile;
 
         return $this;
     }
