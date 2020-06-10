@@ -1,0 +1,7 @@
+dashboard:
+    path: /dashboard
+    controller: amillot\UserBundle\Controller\DefaultController::dashboard
+
+home:
+    path: /
+    controller: amillot\UserBundle\Controller\DefaultController::home
