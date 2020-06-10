@@ -5,6 +5,7 @@ namespace amillot\UserBundle\Repository;
 use amillot\UserBundle\Model\UserInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method UserInterface|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,5 +18,12 @@ class UserRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry, $entityClass)
     {
         parent::__construct($registry, $entityClass);
+    }
+
+    public function getEnableUserQuery(): QueryBuilder
+    {
+        $qb = $this->createQueryBuilder('u');
+
+        return $qb;
     }
 }
