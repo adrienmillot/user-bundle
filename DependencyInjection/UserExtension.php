@@ -20,5 +20,6 @@ class UserExtension extends Extension
         $loader->load('services/default.yaml');
 
         $container->setParameter('user.class', $config['class']);
+        $container->setParameter('profile.class', $config['profile_class']);
     }
 }

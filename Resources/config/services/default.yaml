@@ -29,6 +29,10 @@ services:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
 
+    amillot\UserBundle\Repository\ProfileRepository:
+        arguments:
+            $entityClass: '%profile.class%'
+
     amillot\UserBundle\Repository\UserRepository:
         arguments:
             $entityClass: '%user.class%'
