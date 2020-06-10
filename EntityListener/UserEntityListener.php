@@ -25,7 +25,9 @@ class UserEntityListener
         }
 
         $password = $this->userPasswordEncoder->encodePassword($entity, $entity->getPassword());
+        $profile = $entity->getProfile();
 
         $entity->setPassword($password);
+        $profile->setUser($entity);
     }
 }

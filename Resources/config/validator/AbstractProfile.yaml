@@ -1,0 +1,6 @@
+App\Entity\AbstractProfile:
+    properties:
+    firstName:
+        - NotNull: ~
+    lastName:
+        - NotNull: ~
