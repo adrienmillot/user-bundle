@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="form.label.born_at">
+                <source>form.label.born_at</source>
+                <target>born at</target>
+            </trans-unit>
+            <trans-unit id="form.label.first_name">
+                <source>form.label.first_name</source>
+                <target>first name</target>
+            </trans-unit>
+            <trans-unit id="form.label.last_name">
+                <source>form.label.last_name</source>
+                <target>last name</target>
+            </trans-unit>
+            <trans-unit id="page.edit.title">
+                <source>page.edit.title</source>
+                <target>edition d'un profile</target>
+            </trans-unit>
+            <trans-unit id="page.list.title">
+                <source>page.list.title</source>
+                <target>liste des profiles</target>
+            </trans-unit>
+            <trans-unit id="page.new.title">
+                <source>page.new.title</source>
+                <target>creation d'un nouvel profile</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

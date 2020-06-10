@@ -1,0 +1,4 @@
+{{ form_start(form) }}
+    {{ form_widget(form)}}
+    <button>{{ button_label|default('form.button.save' | trans({}, 'Global') | capitalize) }}</button>
+{{ form_end(form) }}
