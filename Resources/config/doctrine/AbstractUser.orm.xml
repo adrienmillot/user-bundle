@@ -12,6 +12,13 @@
         <field name="roles" column="roles" type="json_array"  />
         <field name="salt" column="salt" type="string"  />
         <field name="username" column="username" type="string"  />
+
+        <one-to-one field="profile" target-entity="amillot\UserBundle\Model\ProfileInterface" mapped-by="user">
+            <cascade>
+                <cascade-all />
+            </cascade>
+            <join-column referenced-column-name="id" />
+        </one-to-one>
     </mapped-superclass>
 
 </doctrine-mapping>
