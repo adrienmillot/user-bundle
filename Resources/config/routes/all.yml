@@ -1,6 +1,9 @@
 default:
     resource: '@UserBundle/Resources/config/routes/default.yml'
 
+security:
+    resource: '@UserBundle/Resources/config/routes/security.yml'
+
 user:
     resource: '@UserBundle/Resources/config/routes/user.yml'
     prefix: '/users'
