@@ -1,0 +1,11 @@
+{% extends '@User/base.html.twig' %}
+
+{% block title %}{{ 'page.list.title' | trans({}, 'User') | capitalize }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'page.list.title' | trans({}, 'User') | capitalize }}</h1>
+
+    {{ render_user_list(page) }}
+
+    <a href="{{ path('user_new') }}">{{ 'link.button.create' | trans({}, 'Global') | capitalize }}</a>
+{% endblock %}

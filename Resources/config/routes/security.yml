@@ -1,0 +1,9 @@
+login:
+    methods: [GET,POST]
+    path:       /login
+    controller: amillot\UserBundle\Controller\SecurityController::login
+
+logout:
+    methods: [GET]
+    path:       /logout
+    controller: amillot\UserBundle\Controller\SecurityController::logout

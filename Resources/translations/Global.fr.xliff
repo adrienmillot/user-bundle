@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="form.button.save">
+                <source>form.button.save</source>
+                <target>sauvegarder</target>
+            </trans-unit>
+            <trans-unit id="form.button.update">
+                <source>form.button.update</source>
+                <target>mettre à jour</target>
+            </trans-unit>
+            <trans-unit id="form.label.actions">
+                <source>form.label.actions</source>
+                <target>actions</target>
+            </trans-unit>
+            <trans-unit id="link.button.back_to_list">
+                <source>link.button.back_to_list</source>
+                <target>retour à la liste</target>
+            </trans-unit>
+            <trans-unit id="link.button.create">
+                <source>link.button.create</source>
+                <target>créer</target>
+            </trans-unit>
+            <trans-unit id="link.button.delete">
+                <source>link.button.delete</source>
+                <target>supprimer</target>
+            </trans-unit>
+            <trans-unit id="link.button.edit">
+                <source>link.button.edit</source>
+                <target>éditer</target>
+            </trans-unit>
+            <trans-unit id="link.button.show">
+                <source>link.button.show</source>
+                <target>visualiser</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

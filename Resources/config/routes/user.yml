@@ -1,0 +1,24 @@
+user_delete:
+    methods: [DELETE]
+    path:       /{id}/delete
+    controller: amillot\UserBundle\Controller\UserController::delete
+
+user_edit:
+    methods: [GET,POST]
+    path:       /{id}/edit
+    controller: amillot\UserBundle\Controller\UserController::edit
+
+user_index:
+    methods: [GET]
+    path:       /
+    controller: amillot\UserBundle\Controller\UserController::index
+
+user_new:
+    methods: [GET,POST]
+    path:       /new
+    controller: amillot\UserBundle\Controller\UserController::new
+
+user_show:
+    methods: [GET]
+    path:       /{id}
+    controller: amillot\UserBundle\Controller\UserController::show

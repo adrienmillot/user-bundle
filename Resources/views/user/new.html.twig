@@ -1,0 +1,11 @@
+{% extends '@User/base.html.twig' %}
+
+{% block title %}{{ 'page.new.title' | trans({}, 'User') | capitalize }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'page.new.title' | trans({}, 'User') | capitalize }}</h1>
+
+    {{ include('@User/user/_form.html.twig') }}
+
+    <a href="{{ path('user_index') }}">{{ 'link.button.back_to_list' | trans({}, 'Global') | capitalize }}</a>
+{% endblock %}
