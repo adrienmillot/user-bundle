@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="form.label.username">
+                <source>form.label.username</source>
+                <target>username</target>
+            </trans-unit>
+            <trans-unit id="form.label.password.first">
+                <source>form.label.password.first</source>
+                <target>password</target>
+            </trans-unit>
+            <trans-unit id="form.label.password.second">
+                <source>form.label.password.second</source>
+                <target>password confirmation</target>
+            </trans-unit>
+            <trans-unit id="form.button.login">
+                <source>form.button.login</source>
+                <target>login</target>
+            </trans-unit>
+            <trans-unit id="page.edit.title">
+                <source>page.edit.title</source>
+                <target>edit user</target>
+            </trans-unit>
+            <trans-unit id="page.list.title">
+                <source>page.list.title</source>
+                <target>user's list</target>
+            </trans-unit>
+            <trans-unit id="page.new.title">
+                <source>page.new.title</source>
+                <target>create new user</target>
+            </trans-unit>
+            <trans-unit id="navbar.list.title">
+                <source>navbar.list.title</source>
+                <target>user's list</target>
+            </trans-unit>
+            <trans-unit id="navbar.account.title">
+                <source>navbar.account.title</source>
+                <target>account</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

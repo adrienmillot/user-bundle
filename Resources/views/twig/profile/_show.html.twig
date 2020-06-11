@@ -1,0 +1,8 @@
+<table>
+    <tbody>
+        <tr>
+            <th>{{ 'form.label.born_at' | trans({}, 'Profile') }}</th>
+            <td>{{ profile.bornAt ? profile.bornAt|date('Y-m-d') : '' }}</td>
+        </tr>
+    </tbody>
+</table>

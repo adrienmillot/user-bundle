@@ -36,3 +36,19 @@ services:
     amillot\UserBundle\Repository\UserRepository:
         arguments:
             $entityClass: '%user.class%'
+
+    amillot\UserBundle\Form\Type\ProfileType:
+        arguments:
+            $prmClassName: '%profile.class%'
+
+    amillot\UserBundle\Form\Type\UserType:
+        arguments:
+            $prmClassName: '%user.class%'
+
+    amillot\UserBundle\Controller\UserController:
+        arguments:
+            $prmUserClassName: '%user.class%'
+
+    amillot\UserBundle\Twig\UserExtension:
+        arguments:
+            $prmUserClassName: '%user.class%'
