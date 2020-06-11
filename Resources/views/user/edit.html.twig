@@ -1,0 +1,13 @@
+{% extends '@User/base.html.twig' %}
+
+{% block title %}{{ 'page.edit.title' | trans({}, 'User') | capitalize }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'page.edit.title' | trans({}, 'User') | capitalize }}</h1>
+
+    {{ include('@User/user/_form.html.twig', {'button_label': 'form.button.update'}) }}
+
+    <a href="{{ path('user_index') }}">{{ 'link.button.back_to_list' | trans({}, 'Global') | capitalize }}</a>
+
+    {{ include('@User/user/_delete_form.html.twig') }}
+{% endblock %}
